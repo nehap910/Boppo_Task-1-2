@@ -1,0 +1,90 @@
+
+1.To Register the user
+URL:http://localhost:8088/registeruser
+Json:
+    {
+        "name":"Harsh Pokharakar",
+        "city":"Pune",
+        "email":"harshaalnehal@gmail.com",
+        "username":"pokhar",
+        "password":"Neha@123"
+        // "confirmpassword":"Neha@123"
+    }
+
+
+2. To Login the user
+URL: http://localhost:8088/signin
+Json:
+        {
+            "username":"nehap910",
+            "password":"Neha@1234"
+        }
+
+
+
+
+  3. To Get the all user List
+  URL:http://localhost:8088/getallusers
+  Response get:
+         {
+                "id": 1,
+                "name": "Neha Pokharkar",
+                "city": "Pune",
+                "email": pokharkarneha2017@gmail.com,
+                "username": neha12,
+                "password": Neha@123,
+                "confirmpassword": Neha@123
+            },
+            {
+                "id": 2,
+                "name": "Boppo",
+                "city": "Pune",
+                "email": boppo@gmail.com,
+                "username": boppo123,
+                "password": Boppo@123,
+                "confirmpassword": Boppo@123
+            }
+
+ 4. To get the user Details by id
+ URL:http://localhost:8088/getbyid/{id}
+ Response get :
+            {
+                "id": 10,
+                "name": "Neha Pokharakar",
+                "city": "Pune",
+                "email": "pokharkarneha2017@gmail.com",
+                "username": "nehap12",
+                "password": "Neha@123",
+                "confirmpassword": "Neha@123"
+            }
+
+
+5.To delete the user by id
+URL:http://localhost:8088/deletebyid/{id}
+Response get:
+            Deleted Id is 10
+
+
+6. to update the user details using the id
+URL:http://localhost:8088/updateuser/{id}
+Json :
+        {
+            "name": "Neha Pokharakar",
+            "city": "Pune",
+            "email": "pooja@@gmail.com",
+            "username": "pooja123",
+            "password": "Neha@123",
+            "confirmpassword": "Neha@123"
+        }
+
+
+7. To Reset the Password using Id
+URL: http://localhost:8088/updatepassword/{id}
+Json:
+        {
+           "password": "Boppo123"
+          }
+
+
+8.I have used the MySQL Database Configuration
+Database Configuration is already done in the application.properties file you just need to change the database name, username and password

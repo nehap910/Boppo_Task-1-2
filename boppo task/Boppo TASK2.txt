@@ -1,0 +1,27 @@
+Question: Retrieve User-Post Information with MongoDB or SQL
+NOTE: Make a raw SQL/NOSQL Query.
+
+Consider two MongoDB collections / SQL Tables: users and posts
+
+1. users Collection: (JSON Data)
+[
+  { "_id": 1, "username": "user1", "name": "John Doe" },
+  { "_id": 2, "username": "user2", "name": "Jane Smith" },
+  { "_id": 3, "username": "user3", "name": "Bob Johnson" }
+]
+
+2. posts Collection: (JSON data)
+[
+  { "_id": 101, "user_id": 1, "title": "Post 1", "content": "Lorem ipsum 1" },
+  { "_id": 102, "user_id": 1, "title": "Post 2", "content": "Lorem ipsum 2" },
+  { "_id": 103, "user_id": 2, "title": "Post 3", "content": "Lorem ipsum 3" },
+  { "_id": 104, "user_id": 3, "title": "Post 4", "content": "Lorem ipsum 4" }
+]
+
+
+
+3. Write a MongoDB aggregation query to retrieve a list of users along with their posts (if any). The result should include the user's _id, username, name, and an array of their posts (post _id, title, content). If a user has no posts, the posts array should be an empty array.
+—----------------------------------------------------------------------------------------------------------------------------
+Expected Output:
+
+Select u._id as user_id,u.username,u.name,p._id as pos_id,p.title,p.content from users u LEFT JOIN posts p ON u._id= p._id ORDER BY u._id,p._id
